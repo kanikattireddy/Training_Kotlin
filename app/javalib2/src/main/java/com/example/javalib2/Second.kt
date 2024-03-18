@@ -119,7 +119,7 @@ fun myHigherOrderFun( ):(Int , Int)->Int
 {
     return  myLambdaMul
 }
- */
+
 fun findMax(a : Int, b : Int):Int = if(a>b) a else b
 
 fun showArea(length : Int , breadth : Int) : Int
@@ -128,9 +128,56 @@ fun showArea(length : Int , breadth : Int) : Int
     var area =calculateArea()
     return area
 }
+
+
+// custom accessor
+val myAge : Int
+    get(){
+        return 100
+    }
+
+
+open class Animal
+{
+    open fun animalEating()
+    {
+        println("Animal is eating")
+    }
+}
+class Tiger : Animal()
+{
+    var name =" abc"
+    fun tigerEating()
+    {
+        println(" tiger is eating")
+    }
+    override fun animalEating() {
+        super.animalEating()
+    }
+}
+ */
+class Tiger( var age : Int = 34)
+{
+
+    init
+    {
+        println("this is primary constructor")
+       // this.age=age
+    }
+    var name = "abc"
+    fun eating()
+    {
+        println("the tiger is eating and his age is $age")
+    }
+}
 fun main()
 {
-    println(showArea(5,3))
+    var tiger = Tiger()
+    tiger.eating()
+
+
+    //println(myAge)
+  //  println(showArea(5,3))
 //    var res = findMax(4,5)
   //  println(res)
  /*   var myArr = arrayOf(11,22,33,67,34,68,35,89)
