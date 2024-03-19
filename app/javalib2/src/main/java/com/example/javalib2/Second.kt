@@ -156,24 +156,48 @@ class Tiger : Animal()
     }
 }
  */
-class Tiger( var age : Int = 34)
+open class Animal(age : Int)
 {
+    var age = 0
+   init {
+        this.age = age
+        println(" age from primary $age")
+    }
 
-    init
+  /*  constructor(id : Int ,myage : Int): this(myage)
     {
-        println("this is primary constructor")
-       // this.age=age
+        println(" Secondary constructor")
+    }
+    constructor(city : String, num1 : Int , num2 : Int):this(num1 , num2)
+    {
+        println(" city is $city")
     }
     var name = "abc"
-    fun eating()
+   */
+ open   fun eating()
     {
-        println("the tiger is eating and his age is $age")
+        println("the Animal is eating")
+    }
+}
+class Tiger(id :Int) : Animal(age = 26)
+{
+    var id =0
+    init {
+        this.id = id
+        println(" primary constructor from Tiger  ")
+    }
+    fun tigerEating()
+    {
+        println("Tiger is eating ")
+    }
+
+    override fun eating() {
+        super.eating()
     }
 }
 fun main()
 {
-    var tiger = Tiger()
-    tiger.eating()
+   var tiger = Tiger(56)
 
 
     //println(myAge)
